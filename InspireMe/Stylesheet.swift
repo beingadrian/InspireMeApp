@@ -14,26 +14,26 @@ import UIKit
  * that are going to be utilised.
  */
 enum Colors {
-    case Green
-    case Blue
-    case LightBlue
-    case Orange
-    case Purple
-    case Red
+    case green
+    case blue
+    case lightBlue
+    case orange
+    case purple
+    case red
     
     var color: UIColor {
         switch self {
-        case .Green:
+        case .green:
             return UIColor(hex: 0x4CD964)
-        case .Blue:
+        case .blue:
             return UIColor(hex: 0x007AFF)
-        case .Orange:
+        case .orange:
             return UIColor(hex: 0xFF9500)
-        case .LightBlue:
+        case .lightBlue:
             return UIColor(hex: 0x5AC8FA)
-        case .Purple:
+        case .purple:
             return UIColor(hex: 0x5856D6)
-        case .Red:
+        case .red:
             return UIColor(hex: 0xFF3B30)
         }
     }
