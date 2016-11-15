@@ -10,33 +10,20 @@ import Foundation
 import UIKit
 
 /**
- * An enum that contains all the colours
- * that are going to be utilised.
+ * A struct that contains all the colours that are going to be utilised.
  */
-enum Colors {
-    case Green
-    case Blue
-    case LightBlue
-    case Orange
-    case Purple
-    case Red
+class Colors {
     
-    var color: UIColor {
-        switch self {
-        case .Green:
-            return UIColor(hex: 0x4CD964)
-        case .Blue:
-            return UIColor(hex: 0x007AFF)
-        case .Orange:
-            return UIColor(hex: 0xFF9500)
-        case .LightBlue:
-            return UIColor(hex: 0x5AC8FA)
-        case .Purple:
-            return UIColor(hex: 0x5856D6)
-        case .Red:
-            return UIColor(hex: 0xFF3B30)
-        }
-    }
+    /**
+     * NOTE: `static` can be accessed without the object being instantiated.
+     */
+    
+    static let green = UIColor(hex: 0x4CD964)
+    static let blue = UIColor(hex: 0x007AFF)
+    static let orange = UIColor(hex: 0xFF9500)
+    static let lightBlue = UIColor(hex: 0x5AC8FA)
+    static let purple = UIColor(hex: 0x5856D6)
+    static let red = UIColor(hex: 0xFF3B30)
     
 }
 
