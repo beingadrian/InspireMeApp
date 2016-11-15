@@ -22,7 +22,7 @@ class QuotesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        injectQuotes()
+        setQuotes()
         
         displayRandomQuote(animated: false)
         
@@ -32,37 +32,38 @@ class QuotesViewController: UIViewController {
      * Creates hard-coded quotes that are going to be added into the `QuoteGenerator`'s 
      * quotes array property.
      */
-    func injectQuotes() {
+    func setQuotes() {
         
         // create quotes
         
         let quoteA = Quote(author: "Unknown",
                            quote: "Love your life.",
-                           backgroundColor: Colors.blue.color)
+                           backgroundColor: Colors.blue)
         
         let quoteB = Quote(author: "Hamlet",
                            quote: "To be or not to be, that is the question.",
-                           backgroundColor: Colors.red.color)
+                           backgroundColor: Colors.red)
         
         let quoteC = Quote(author: "Darth Vader",
                            quote: "I am your father.",
-                           backgroundColor: Colors.purple.color)
+                           backgroundColor: Colors.purple)
         
         let quoteD = Quote(author: "Gandalf",
                            quote: "You shall not pass!",
-                           backgroundColor: Colors.orange.color)
+                           backgroundColor: Colors.orange)
         
         let quoteE = Quote(author: "Master Yoda",
                            quote: "Do or do not. There is no try.",
-                           backgroundColor: Colors.orange.color)
+                           backgroundColor: Colors.orange)
         
         // add quotes to the quotes array
-        
-        quoteGenerator.quotes.append(quoteA)
-        quoteGenerator.quotes.append(quoteB)
-        quoteGenerator.quotes.append(quoteC)
-        quoteGenerator.quotes.append(quoteD)
-        quoteGenerator.quotes.append(quoteE)
+        quoteGenerator.quotes = [
+            quoteA,
+            quoteB,
+            quoteC,
+            quoteD,
+            quoteE
+        ]
         
     }
     
@@ -83,7 +84,7 @@ class QuotesViewController: UIViewController {
             return
         }
         
-        // make sure animated is true, otherwise do not need to execute the subsequent animation quote below
+        // make sure animated is true, otherwise do not animate
         guard animated else {
             quoteLabel.text = randomQuote.quote
             authorLabel.text = "- \(randomQuote.author)"
